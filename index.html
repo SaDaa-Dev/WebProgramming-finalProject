@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/clock.js" defer></script>
+    <script src="./js/todo.js"  defer></script>
+    <script src="./js/video.js" defer></script>
+</head>
+<body>
+    <!-- 시계 관련 html -->
+    <div class="js-clock">
+        <h1></h1>
+    </div>
+    <!-- 할일 입력을 받는 폼 -->
+    <div class="js-todo">
+        <form id="todo-form"> 
+            <input type="text" placeholder="할일을 입력하세요" required>
+        </form>
+    </div>
+    <!-- 비디오 입력 폼 -->
+    <div class="js-video">
+        <form id="video-form">
+            <input type="text" placeholder="유튜브 주소 입력" required>
+        </form>
+    </div>
+    <hr width="100%" color="black">
+    <div class="todo-list-title">To Do List</div>
+    
+    <!-- 입력받은 할일 리스트를 표시 -->
+    <ul id="todo-list"></ul>
+
+    <hr width="100%" color="black">
+    <div class="video-list-title">Video</div>
+    <!-- 유튜브 영상을 표시 -->
+    <div id="video-list"></div>
+
+    
+
+
+</body>
+</html>
