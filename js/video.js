@@ -26,7 +26,7 @@ function convertToEmbeddedURL(videoURL) {
 function paintVideo(newVideo){
     const section = document.createElement("section");
     section.setAttribute("class", "video");
-    section.id = newVideo.id;
+    section.id = newVideo.id; // id값을 들어온 오브젝트의 id값으로 초기화해주는 부분
     const div = document.createElement("div");
     div.setAttribute("class","video-player");
     const iframe = document.createElement("iframe");
@@ -44,12 +44,12 @@ function paintVideo(newVideo){
 }
 
 function handleVideoSubmit(event){
-    event.preventDefault();
+    event.preventDefault(); // 새로고침 방지
     const videoURL = videoInput.value;
     videoInput.value = "";
     const newVideoObj = { // id를 오브젝트에 저장해서 지울 위치를 지정
         text: videoURL,
-        id: Date.now(), 
+        id: Date.now(),  // 지우는 객체 구분을 해 줄 id값 지정
     }
     Videos.push(newVideoObj);
     paintVideo(newVideoObj);
@@ -58,7 +58,7 @@ function handleVideoSubmit(event){
 
 function deleteVideo(event){
     const section = event.target.parentElement.parentElement;
-    section.remove();
+    section.remove(); // 해당 섹션을 삭제 ( 비디오 표시 섹션 )
     // 삭제하는 오브젝트 위치와 같은 id를 가진 요소를 삭제
     Videos = Videos.filter((video)=> video.id !== parseInt(section.id)); 
     saveVideos(Videos);
